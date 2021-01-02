@@ -1,0 +1,376 @@
+"DefNum","Category","ItemOrder","ItemName","ItemValue","ItemColor","IsHidden"
+1,1,3,"Misc Neg Adjustment","-",0,0
+2,1,4,"Misc Pos Adjustment","+",0,0
+4,0,1,"Adjustment","",-16777031,0
+5,0,3,"Payment","",-16744448,0
+6,0,4,"Insurance","",-2555904,0
+7,0,0,"Default","",-16777216,0
+8,1,0,"Professional Discount","-",0,0
+9,1,2,"Cash Discount","-",0,0
+10,1,18,"Write Off","-",0,1
+112,0,2,"Discount","",-16744448,0
+12,1,19,"Insurance Writeoff","-",0,1
+13,1,5,"$10 Referral Discount","-",0,0
+14,1,6,"BROKEN Appt - No Show","+",0,0
+15,1,7,"BROKEN Appt w/o 24 hrs Notice","+",0,0
+16,1,8,"Returned Check Fee","+",0,0
+17,1,9,"NSF fee","+",0,0
+18,1,17,"Patient Refund Check","+",0,1
+19,2,0,"Unconfirmed","Unconfrm",-1,0
+20,2,6,"Left Msg on Ans Mach","LeftMsg",-32768,0
+21,2,1,"Appointment Confirmed","Confirmed",-16711936,0
+22,2,7,"Left Msg w Fam Mem","MsgFam",-32768,0
+23,2,8,"Not Home","NotHome",-65536,0
+24,2,9,"Disconnected Number","DiscNum",-65536,0
+25,2,10,"Line Busy","LinBusy",-65536,0
+26,3,5,"Comp Exam","D0150",0,0
+27,3,6,"Per Exam","D0120",0,0
+28,3,7,"Lim Exam","D0140",0,0
+29,3,8,"1 PA","D0220",0,0
+30,3,9,"2BW","D0272",0,0
+31,3,10,"4BW","D0274",0,0
+32,3,12,"Pro Adult","D1110",0,0
+33,3,13,"Fluor Adult","D1206",0,0
+34,3,14,"Pro Child","D1120",0,0
+35,3,15,"Fluor Child","D1206",0,0
+36,3,18,"Consult","D9310",0,0
+37,3,11,"Pano","D0330",0,0
+38,3,16,"PostOp","N4101",0,0
+39,3,17,"DentAdj","N4102",0,0
+40,4,0,"Standard Account","",0,0
+41,4,1,"Bad Debt - Precollections","",0,0
+42,4,2,"Bad Debt - Sent to Collections","",0,0
+43,5,0,"paper","ADA2002",0,0
+44,5,1,"eClaim","eclaim",0,0
+45,6,0,"Standard 0-30","",0,0
+46,6,1,"Standard 31-60","Charges over 30 days.",0,0
+47,6,2,"Standard 61-90","Charges over 60 days.",0,0
+48,6,3,"Standard Over 90","Charges over 90 days.  Finance charges apply.",0,0
+49,6,4,"Insurance 0-30","",0,0
+50,6,5,"Insurance 31-60","Charges over 30 days.",0,0
+51,6,6,"Insurance 61-90","Charges over 60 days.",0,0
+52,6,7,"Insurance Over 90","Charges over 90 days.  You are responsible for unpaid insurance. Finance charges apply.",0,0
+56,8,1,"BP","",0,0
+57,8,6,"Allergy:","",0,0
+58,8,2,"Heart","",0,0
+59,8,3,"Low Epi","",0,0
+60,8,4,"PAC","",0,0
+61,8,7,"Medication:","",0,0
+62,8,0,"none","",0,0
+63,8,5,"Diabetes","",0,0
+194,22,7,"Existing Current Prov (light)","",-8421409,0
+193,22,6,"Complete (light)","",-8421408,0
+192,22,5,"Treatment Planned (light)","",-1933441,0
+69,10,0,"Check","",0,0
+70,10,1,"Cash","",0,0
+71,10,2,"Credit Card","",0,0
+113,12,2,"Status Existing Current Prov","",-16777206,0
+72,10,3,"Patient Refund","",0,0
+73,11,0,"Exams & Xrays","",0,0
+74,11,1,"Cleanings","",0,0
+75,11,2,"Fillings","",0,0
+76,11,3,"Endo","",0,0
+77,11,4,"Perio","",0,0
+78,11,5,"Dentures","",0,0
+79,11,6,"Cosmetic","",0,0
+80,11,8,"Implants","",0,0
+81,11,9,"Crown & Bridge","",0,0
+82,11,10,"Oral Surgery","",0,0
+83,11,11,"Ortho","",0,0
+85,11,14,"No Fee","",0,0
+88,12,1,"Status Complete","",-16185069,0
+89,12,5,"Rx","",-65536,0
+90,12,0,"Status Treatment Planned","",-8978432,0
+91,12,3,"Status Existing Other Prov","",-16751616,0
+92,13,0,"Appointment Scheduled","AptSchd",0,0
+93,13,8,"Not Home, Call Again","NotHome",0,0
+94,13,1,"Call Back, Not Ready","CallBak",0,0
+95,13,2,"Patient Will Call Us","CallUs",0,0
+96,13,3,"Bad Debt. Don't Call","BadDebt",0,0
+97,13,5,"Left Msg on Ans. Mach","LeftMsg",0,0
+98,13,6,"Left Message with Fam","MsgFam",0,0
+99,13,7,"Discon Ph Num","DiscNum",0,0
+100,13,4,"Wait. See notes.","Wait",0,0
+101,14,3,"Pillow","",0,0
+102,14,4,"No Fluoride","",0,0
+103,14,7,"Hard to Numb","",0,1
+104,14,0,"Value","",0,0
+105,14,2,"Quality","",0,0
+106,14,5,"Don't Lean Back","",0,0
+107,14,1,"Painless","",0,0
+108,15,1,"10% Senior Discount","10",0,0
+109,15,0,"5% Cash Discount","5",0,0
+110,15,2,"New Patient Discount","20",0,0
+111,15,3,"Discount","",0,0
+115,16,1,"Caries","C",0,0
+116,16,2,"Recurrent (Car)","R",0,0
+117,16,3,"Incipient (Car)","I",0,0
+118,16,4,"Defect (or miss fill)","D",0,0
+119,16,5,"Missing (tooth struct)","M",0,0
+120,16,6,"Irrevers. Pulp.","IP",0,0
+121,16,7,"Revers. Pulp.","RP",0,0
+122,16,8,"Necrotic","Nc",0,0
+123,16,9,"Apical Perio","AP",0,0
+124,16,10,"Abscess","Ab",0,0
+125,16,11,"Carious Pulp Exp","CE",0,0
+126,16,12,"Cracked Tooth","Cr",0,0
+127,17,0,"Practice Open","",-1,0
+128,17,1,"Practice Closed","",-2368549,0
+191,26,0,"General","",0,0
+130,18,3,"Medical History","E",0,0
+131,18,2,"Insurance","E",0,0
+132,18,6,"Treatment Plans","E",0,0
+133,18,8,"Patient Treatment","E",0,0
+134,18,1,"Financial","E",0,0
+135,18,7,"Letters","E",0,0
+136,18,0,"Credit Approval","E",0,0
+137,18,4,"Miscellaneous","E",0,0
+138,18,5,"Patient Information","E",0,0
+139,16,0,"None","",0,0
+262,32,1,"EFT","N",0,0
+141,17,2,"Appointment Complete-Background","",-2039837,0
+142,13,9,"Mailed Postcard","Mailed",0,0
+143,19,0,"Called. Left message.","",0,0
+144,19,1,"Called.  No answer.","",0,0
+145,19,2,"Called.  Bad number.  Made note in chart","",0,0
+146,20,0,"1","",-16777216,0
+147,20,1,"2","",-16777216,0
+148,20,13,"Declined","",-7237231,0
+149,20,11,"Low","",-16777216,0
+150,20,10,"Next","",-6356992,0
+151,20,4,"5","",-16777216,0
+152,20,9,"10","",-16777216,0
+153,20,2,"3","",-16777216,0
+154,20,3,"4","",-16777216,0
+155,20,8,"9","",-16777216,0
+156,20,5,"6","",-16777216,0
+157,20,6,"7","",-16777216,0
+158,20,7,"8","",-16777216,0
+159,20,12,"Recmend","",-7237231,0
+160,12,4,"Status Referred","",-8978432,0
+161,14,6,"Anxiety","",0,0
+162,17,3,"Holiday","",-2509157,0
+163,0,5,"Comm","",-8388608,0
+164,21,0,"Family Module Coverage","",-2823993,0
+165,22,0,"Treatment Planned","",-3801088,0
+166,22,1,"Complete","",-16777023,0
+167,22,2,"Existing Current Prov","",-16777025,0
+168,22,3,"Existing Other Prov","",-16751616,0
+169,22,4,"Referred Out","",-3276800,0
+170,1,10,"Finance Charge","+",0,0
+171,23,0,"Pharmacies","",0,0
+172,23,1,"Local Dentists","",0,0
+173,0,6,"PayPlan","",-8388608,0
+174,21,1,"Perio Bleeding","",-1043436,0
+175,21,2,"Perio Suppuration","",-24576,0
+176,21,3,"Chart Module Medical","",-16192,0
+177,21,4,"Perio Plaque","",-10066177,0
+178,21,5,"Perio Calculus","",-16737024,0
+179,18,9,"BWs","XE",0,0
+180,18,10,"FMXs","XE",0,0
+181,18,11,"Panos","XE",0,0
+182,18,12,"Photos","XE",0,0
+183,21,6,"Chart Today's Procs","",-886,0
+184,21,7,"Commlog Appt Related","",-886,0
+185,1,11,"5% Cash Discount","-",0,0
+186,1,12,"10% Senior Discount","-",0,0
+187,1,13,"New Patient Discount","-",0,0
+188,1,14,"Discount","-",0,0
+189,17,4,"Blockout Text","",-9539986,0
+190,18,13,"Patient Pictures","PE",0,0
+195,22,8,"Existing Other Prov (light)","",-8408705,0
+196,22,9,"Referred Out (light)","",-1671297,0
+197,12,6,"CommLog","",-65536,0
+198,22,10,"Main Background","",-6909543,0
+199,22,11,"Text","",-1,0
+200,22,12,"Highlighted Text","",-65536,0
+201,22,13,"Highlighted Background","",-1,0
+202,22,14,"Background on TPs","",-1,0
+203,22,15,"Text on TPs","",-16777216,0
+204,12,7,"LabCase","",-65536,0
+205,12,8,"Appointment Text - Today","",-8388480,0
+206,12,9,"Appointment Background - Today","",-886,0
+207,12,10,"Past Appointment Text","",-8388480,0
+208,12,11,"Past Appointment Background","",-1,0
+209,12,12,"Future Appointment Text","",-8388480,0
+210,12,13,"Future Appointment Background","",-7278960,0
+211,12,14,"Broken/Unschd Appt Text","",-8388480,0
+212,12,15,"Broken/Unschd Appt Background","",-1,0
+213,12,16,"Planned Appointment Text","",-8388480,0
+214,12,17,"Planned Appointment Background","",-1,0
+215,12,18,"Patient Note Text","",-8388480,0
+216,12,19,"Patient Note Background","",-1,0
+261,32,0,"Check","",0,0
+218,17,5,"Patient Note Background","",-1051718,0
+259,2,12,"Texted","Texted",-256,0
+260,11,16,"Obsolete","",0,0
+221,17,6,"Completed Pt. Note Background","",-8355712,0
+222,12,20,"Completed Pt Note Text","",-8388480,0
+223,12,21,"Completed Pt Note Background","",-1,0
+224,27,0,"ApptRelated","APPT",0,0
+225,27,1,"Insurance","",0,0
+226,27,2,"Financial","FIN",0,0
+227,27,3,"Recall","RECALL",0,0
+228,27,4,"Misc","MISC",0,0
+229,18,14,"Statements","S",0,0
+230,0,7,"Insurance Payment","",-16744448,0
+231,0,8,"Received Ins Claim","",-5220352,0
+232,0,9,"Received Pre-Auth","",-8388480,0
+233,21,8,"Family Module Referral","",-2823993,0
+234,1,15,"Billing Charge","+",0,0
+235,1,16,"Reallocation","+",0,0
+236,12,22,"Status Condition","",-8978432,0
+237,22,16,"Condition","",-5169880,0
+238,22,17,"Condition (light)","",-1678747,0
+239,18,15,"Tooth Charts","TE",0,0
+240,2,11,"E-mailed Confirmation","E-mailed",-256,0
+241,25,0,"General Blockout","",-16744448,0
+242,2,2,"Arrived","Arrived",-8323073,0
+243,2,3,"Ready to go Back","Ready",-16744193,0
+244,2,4,"In Treatment Room","In Room",-16777018,0
+245,3,0,"CompEx-4BW-Pano-Pro-Flo","D0150,D0274,D0330,D1110,D1206",0,0
+246,3,1,"CompEx-2BW-Pano-ChPro-Flo","D0150,D0272,D0330,D1120,D1206",0,0
+247,3,2,"PerEx-4BW-Pro-Flo","D0120,D0274,D1110,D1206",0,0
+248,3,3,"PerEx-2BW-ChildPro-Flo","D0120,D0272,D1120,D1206",0,0
+249,3,4,"LimEx-PA","D0140,D0220",0,0
+250,11,13,"Misc","",0,0
+251,11,7,"Prosthodontics","",0,0
+252,13,10,"Emailed Recall Reminder","Emailed",0,0
+253,26,1,"Exams/Cleaning","",0,0
+254,26,2,"Endo","",0,1
+255,26,3,"Oral Surgery","",0,1
+256,26,4,"Crowns & Bridges","",0,1
+257,25,1,"Staff Meeting","",-128,0
+258,25,2,"Lunch","",-32640,0
+263,33,0,"Normal","D",-1,0
+264,34,0,"Default","",-16777216,0
+265,34,1,"Provider","",-15161839,0
+266,34,2,"Clinic","",-3176419,0
+267,34,3,"Provider and Clinic","",-16776961,0
+268,35,0,"General","",0,0
+269,35,1,"Hygienist","",0,0
+270,35,2,"Endodontics","",0,0
+271,35,3,"Pediatric","",0,0
+272,35,4,"Perio","",0,0
+273,35,5,"Prosth","",0,0
+274,35,6,"Ortho","",0,0
+275,35,7,"Denturist","",0,0
+276,35,8,"Surgery","",0,0
+277,35,9,"Assistant","",0,0
+278,35,10,"LabTech","",0,0
+279,35,11,"Pathology","",0,0
+280,35,12,"PublicHealth","",0,0
+281,35,13,"Radiology","",0,0
+282,0,10,"Broken Appointment Procedure","",-16777031,0
+283,36,0,"Default","",0,0
+287,38,1,"See Notes","",0,0
+286,38,0,"Attempted","",0,0
+288,29,0,"Prepayment","",0,0
+289,0,11,"Canceled Appointment Procedure","",-16777031,0
+290,33,1,"Reminder","R",-9031,0
+291,40,0,"Default","",0,1
+292,21,9,"Family Module ICE","",-70679,0
+293,21,10,"Family Module Pat Restrictions","",-70679,0
+294,2,13,"eConfirmSent","eConfirmSent",-256,0
+295,2,14,"eConfirmCallBack","eConfirmCallBack",-32768,0
+296,2,15,"eConfirmFailure","eConfirmFailure",-65536,0
+297,1,1,"Sales Tax","+",0,0
+298,13,11,"Texted","",0,0
+299,13,12,"Texted/Emailed","",0,0
+300,11,15,"Never Used","",0,0
+301,11,12,"Anesthesia","",0,0
+302,2,5,"CheckOut","ChkOut",-16777135,0
+303,32,2,"CC","N",0,0
+304,20,14,"11","",-16777216,0
+305,20,15,"12","",-16777216,0
+306,20,16,"13","",-16777216,0
+307,20,17,"14","",-16777216,0
+308,20,18,"15","",-16777216,0
+309,20,19,"16","",-16777216,0
+310,20,20,"17","",-16777216,0
+311,20,21,"18","",-16777216,0
+312,20,22,"19","",-16777216,0
+313,20,23,"20","",-16777216,0
+314,31,0,"Called","0",0,0
+315,1,20,"Conv Adjustment","+",0,1
+316,1,21,"Pending Claim","+",0,0
+317,1,22,"Received Claim","+",0,0
+318,1,20,"-Professional Discount","-",0,0
+319,1,21,"-Cash Discount","-",0,0
+320,1,22,"-Credit Adjustment","-",0,0
+321,1,23,"+Debit Adjustment","+",0,0
+322,1,24,"+Patient Refund","+",0,0
+323,1,25,"-Write-Off/bad debt","-",0,0
+324,1,26,"-Sr. Discount","-",0,0
+325,1,27,"-Insurance Contract","-",0,0
+326,1,28,"-Posting Error","-",0,0
+327,1,29,"+Posting Error","+",0,0
+328,1,30,"-Wrong Account","-",0,0
+329,1,31,"+Wrong Account","+",0,0
+330,1,32,"-Cash Discount","-",0,0
+331,1,33,"-Courtsey Discount","-",0,0
+332,1,34,"-HELP CARD","-",0,0
+333,1,35,"+HELP CARD","+",0,0
+334,1,36,"-Old Account Credit","-",0,0
+335,1,37,"+Collection Costs","+",0,0
+336,1,38,"+Insurance Refund","+",0,0
+337,1,39,"+NSF Check","+",0,0
+338,1,40,"+Service charge","+",0,0
+339,1,41,"+Care Credit refund","+",0,0
+340,1,42,"-Professional Discount","-",0,0
+341,10,4,"Conv Payment","",0,1
+342,10,5,"Conv Ins Payment","",0,1
+343,10,6,"Check Pymnt, mail - Thank You","",0,0
+344,10,7,"Cash Payment - Thank You","",0,0
+345,10,8,"Credit Card Payment -Thank You","",0,0
+346,10,9,"Insurance ck","",0,0
+347,10,10,"Check Pymnt office - Thank You","",0,0
+348,10,11,"Care Credit","",0,0
+349,10,13,"Insurance credit card","",0,0
+350,10,14,"Care Credit Payment- Thank You","",0,0
+351,10,15,"Text to pay","",0,0
+352,4,3,"Standard Billing - finance charges","",0,0
+353,4,4,"Standard Billing - no finance charges","",0,0
+354,4,5,"Insurance Family - delay finance charges","",0,0
+355,4,6,"Insurance Family - finance charges","",0,0
+356,4,7,"Payment Plan - finance charges","",0,0
+357,4,8,"Payment Plan - no finance charges","",0,0
+358,4,9,"No Statement and No Finance Charges","",0,0
+359,4,10,"Bad Debt - at risk","",0,0
+360,4,11,"Bad Debt - to collections","",0,0
+361,2,11,"LM","LMHR",0,0
+362,2,12,"Appointment Confirmed","CONF",0,0
+363,2,13,"TEXT SENT","T-CONF",0,0
+364,2,14,"LEFT MESS WITH WORK","LMWR",0,0
+365,2,15,"CALL DAY BEFORE","CDB",0,0
+366,2,16,"E-MAIL CONF 2 WEEKS","E-CONF",0,0
+367,2,17,"Pt Here","Here",0,0
+368,2,18,"E-mail Message","E-mail",0,0
+369,2,19,"Missed Appointment","MISSED",0,0
+370,2,20,"Text Mesage","TX",0,0
+371,25,2,"Conv Blockout","",-128,0
+372,26,5,"Dentrix","",0,0
+373,2,21,"<None>","None",0,0
+374,3,19,"xx2sA","D2150,D2150",0,0
+375,3,20,"xx2sC","D2386",0,0
+376,3,21,"xx3sA","D2160",0,0
+377,3,22,"xx3sC","D2387",0,0
+378,3,23,"xx6mc","D0150,D0120,D1110,D0274",0,0
+379,3,24,"xxBRG","D0120,D6750,D6240",0,0
+380,3,25,"xxbw6","D0230,D0230,D1201,D0230,D0230,D0274,D0230,D0230",0,0
+381,3,26,"xxCBS","D9997,D0150,D2950,D2740",0,0
+382,3,27,"xxCCA","D0120,D1110,D0274,D0150",0,0
+383,3,28,"xxCCC","D1110,D0460,D0210,xxCCA,D0415,D0425",0,0
+384,3,29,"xxCCP","D0150,D1120,D0120,D0272",0,0
+385,3,30,"xxnpe","D0120,D0150,D0210",0,0
+386,3,31,"xxnph","D0150,D0150,D1110,D0210",0,0
+387,3,32,"xxPex","D1120,D4341,D0210,D0150,D4341,D4341,D4341",0,0
+388,3,33,"xxRCC","D0120,D2792,D3310",0,0
+389,3,34,"xxSTM","D98999",0,0
+390,13,13,"Emailed Postcard","Email",0,0
+391,2,22,"Created from Web Sched","WebSched",0,0
+393,27,5,"ODHQ","ODHQ",0,0
+394,42,0,"New Patient General","",0,0
+395,38,2,"ServiceError","SE",0,0
+396,29,1,"Treat Plan Prepayment","X",0,0
+398,27,6,"FHIR","FHIR",0,0
