@@ -22,4 +22,20 @@ class wrangle:
             df = df[df[target_col] != target]
         return df
             
-            
+    def scaler(column, bottom_range, top_range):
+        '''
+        Scales data between a range between (bottom_range, top_range)
+        𝑥𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧𝑒𝑑=(𝑏−𝑎) * 𝑥−𝑚𝑖𝑛(𝑥)     + a
+                        𝑚𝑎𝑥(𝑥)−𝑚𝑖𝑛(𝑥)
+        Input: pd.Series, np.array (list will not broadcast)
+        Ouput: scaled version of Input between bottom_range and top_range
+        '''
+        #This value is known due to the current (Nov 2020) SOF distribution
+        # ***** Need to not hard code this value *****
+        max_series = column.max()
+        min_series = column.min()
+        multiplier = top_range - bottom_range
+        numerator = series - min_series
+        denominator = max_series - min_series
+        ans = (multiplier * numerator/denominator) + bottom_range
+        return ans + bottom_range
