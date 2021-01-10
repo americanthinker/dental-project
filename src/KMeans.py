@@ -12,7 +12,7 @@ def find_best_k(df, target_cols, suffix, max_k=10):
     :param df: pandas DataFrame
     :param target_col: column or columns to be used for K-means clustering
     :param suffix: Suffix to main title, usually target_col
-    :return: dict of k:inertia values and a pandas df with new cluster labels
+    :returns: dict of k:inertia values and a pandas df with new cluster labels
     """
     sse={}
     data = df[target_cols].values.reshape(-1, 1)
