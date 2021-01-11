@@ -16,9 +16,9 @@ def load_data(filepath,  drop_columns, start_day=150, end_day=399):
     returns: original dataset to map back to patient contact info and test set for predictions
     '''
     orig_data = pd.read_csv(filepath)
-    link_data = orig_data[orig_data['LastVisit'].between(start_day, end_day)].reset_index(drop=True)
-    test = link_data.drop(drop_columns, axis=1)
-    return link_data, test
+    link_data = orig_data[orig_data['Recency'].between(start_day, end_day)].reset_index(drop=True)
+    test_data = link_data.drop(drop_columns, axis=1)
+    return link_data, test_data
 
 def load_model(filepath):
     '''
@@ -48,10 +48,10 @@ def priority_list(original_df, predicted_probas, thresh=75):
     return patients
 
 
-dropcols = ['FName', 'Bal_0_30', 'Bal_31_60', 'Bal_61_90', 'BalOver90', 'BalTotal','LastVisit', 'churn', 'BalTotal', "PatNum", 'PatStatus']
+dropcols = ['FName',  'churn', 'BalTotal', "PatNum", 'PatStatus']
 
 #load data from source and get create original df and data for getting predictions
-link_data, test = load_data('../data/model/with_names.csv', dropcols)
+link_data, test = load_data('../data/model/for_model_preds.csv', dropcols)
 
 # load pretrained model and make predictions
 model = load_model('bestLRmodel.pkl')
@@ -65,6 +65,6 @@ st.title(f'Total # of Patients: {len(df)}')
 #display patient data on screen
 st.dataframe(df)
 
-st.title('Prioritized Contact List')
+#st.title('Prioritized Contact List')
 
 
