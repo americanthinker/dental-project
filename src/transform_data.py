@@ -108,7 +108,6 @@ class Transform:
         """
 
         for_model = dataframe[dataframe['Recency'].between(150, churn_end)]
-        for_model.drop('Recency', axis=1, inplace=True)
         contact_list = dataframe[dataframe['Recency'].between(400, contact_end)]
 
         return for_model, contact_list
