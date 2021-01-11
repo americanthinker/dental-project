@@ -39,7 +39,7 @@ class Transform:
         """
         Transforms raw data into patient df for use in predictive modeling
 
-        :params: filepaths to appt table, patient table, and total payments table
+        :params: filepaths to appt table, patient table
         """
 
         patient_cols = ['FName', 'PatNum', 'Birthdate', 'Gender', 'EstBalance', 'InsEst', 'HasIns', 'DateFirstVisit']
