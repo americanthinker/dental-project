@@ -13,38 +13,41 @@ model, contact = t.data_split(merged)
 
 @st.cache
 def load_data(model_data, drop_columns, start_day=150, end_day=399):
-    '''
+    """
     Loads data from source and parses into a test set for predictions
 
     :param: filepath to data file
     :param: day_range = range of days to select churn window
     :param: drop_columns = list of columns to be dropped from raw dataset for use with model predictions
     returns: original dataset to map back to patient contact info and test set for predictions
-    '''
+    """
+    
     orig_data = model_data
     link_data = orig_data[orig_data['Recency'].between(start_day, end_day)].reset_index(drop=True)
     test_data = link_data.drop(drop_columns, axis=1)
     return link_data, test_data
 
 def load_model(filepath):
-    '''
+    """
     Loads Picked model for use with predictions
 
     params: filepath to pickled model
     returns: pickled model for use with predictions on data
-    '''
+    """
+    
     with open(filepath, 'rb') as file:
         Pickled_Model = pickle.load(file)
     return Pickled_Model
 
 def priority_list(original_df, predicted_probas, thresh=75):
-    '''
+    """
     Create patient prioritized contact list to prevent churn
 
     :param: original df: df to map back to patient contact info
     :param predicted_probas: predicted probabilities for each patients to be sorted highest to lowest for churn (must be 2d array for binary class)
     :param thresh: threshold setting for capturing predicted churn above a certain threshold, default = 70
-    '''
+    """
+    
     preds = pd.DataFrame(predicted_probas) * 100
     churns = preds[preds[1] >= thresh].loc[:,1].sort_values(ascending=False)
     patients = original_df.loc[churns.index, :].loc[:, ['PatNum', 'FName', 'Tenure', 'Frequency', 'Recency']]
