@@ -31,13 +31,15 @@ def find_best_k(df, target_cols, suffix, max_k=10):
     return sse
 
 def create_labels(df, target_cols, k):
-    '''
-
+    """
+    Create clusters labels based on results of Kmeans clustering
+    
     :param df: pandas DataFrame
     :param target_cols: column to be used for kmeans calculations, use list if more than one
     :param k: best k found from find_best_k
     :return: new df with cluster labels
-    '''
+    """
+    
     if len(target_cols) == 1:
         data = df[target_cols].values.reshape(-1, 1)
     else:
@@ -57,13 +59,15 @@ def create_labels(df, target_cols, k):
     return table, df_final
 
 def box_results(df, cat_col, cont_col, title):
-    '''
+    """
+    Basic function that returns boxplots of categorical and continuous variables in df
+    
     :param df: pandas DataFrame
     :param cat_col: categorical column of interest (x-axis)
     :param cont_col: continuous column of interest (y-axis)
     :param title: Main title of plot
     :return: boxplot of results
-    '''
+    """
 
     fig = plt.figure(figsize=(24, 10))
     plot = sns.boxplot(x=df[cat_col], y=df[cont_col], hue=df[cat_col])
@@ -75,14 +79,14 @@ def box_results(df, cat_col, cont_col, title):
     title = plt.title(title, fontsize=30, fontweight='bold')
 
 def twoD_viz(df, xcol, ycol):
-    '''
+    """
     Plotting function that provides 2d visualization to selected cols from pandas DF
 
     :param df: pandas DataFrame that includes cluster labels
     :param xcol: column along x-axis
     :param ycol: column along y-axis
     :return: visualization of plotted results
-    '''
+    """
 
     X = df[xcol]
     y = df[ycol]
