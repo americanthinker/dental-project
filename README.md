@@ -1,2 +1,9 @@
-# dental-project
-Working repo for Shasta Dental Service ML and Dashboard project
+# Churn Prediction 
+I partnered with the CEO of a Private Equity backed dental practice with the understanding that:  
+<center>
+  <p>
+  Business  +  Data Science  =  Better Business
+  </p>
+</center>
+
+
