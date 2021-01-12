@@ -39,7 +39,12 @@ class Transform:
         """
         Transforms raw data into patient df for use in predictive modeling
 
-        :params: filepaths to appt table, patient table
+        Parameters:
+             appt_filepath: filepath to appointment table
+             pat_filepath: filepath to patient table
+
+        Returns:
+            Merged DataFrame of appt and patient tables for use with model for predictions and contact list
         """
 
         patient_cols = ['FName', 'PatNum', 'Birthdate', 'Gender', 'EstBalance', 'InsEst', 'HasIns', 'DateFirstVisit']
@@ -97,20 +102,43 @@ class Transform:
 
         return merged
 
-    def data_split(self, dataframe, churn_end=400, contact_end=720):
+    def data_split(self, dataframe, churn_begin=150, churn_end=399, contact_begin=360, contact_end=720):
         """
         Splits dataframe into two sets, one for making churn predictions and one for creating prioritized contact list
 
-        :params dataframe: merged pandas DF from previous steps
-        :param churn_end: allows user to select defined churn timeframe, default is 400 days from last visit
-        :param contact_end: allows user to select end of timeframe for contact list, default is 720 days from last visit (2 years)
-        :returns: two pandas DFs
+        Parameters:
+            dataframe: merged pandas DF from previous steps
+            churn_end: allows user to select defined churn timeframe, default is 400 days from last visit
+            contact_end: allows user to select end of timeframe for contact list, default is 720 days from last visit (2 years)
+
+        Returns:
+             Two pandas dataframes for use with model predictions and prioritized contact list
         """
 
-        for_model = dataframe[dataframe['Recency'].between(150, churn_end)]
-        contact_list = dataframe[dataframe['Recency'].between(400, contact_end)]
+        for_model = dataframe[dataframe['Recency'].between(churn_begin, churn_end)]
+        for_model.reset_index(drop=True, inplace=True)
+        contact_list = dataframe[dataframe['Recency'].between(contact_begin, contact_end)]
 
         return for_model, contact_list
+
+    def contact_transform(self, df):
+        """
+        Creates specific df for use as a prioiritzed contact list for dental staff.  Score is calculated as follows:
+        Final Score = Recency (days) - Tenure/50 (days) - Total/50 ($) - Frequency/10 (visits)
+        The lower the score, the higher the priority on the contact list.
+
+        Parameters:
+            df: contact_list df from previous step in chain
+
+        Returns:
+            Pandas df of patients sorted in prioritzed order for recontact based on calculated score
+        """
+        df = df.loc[:, ['PatNum', 'FName', 'Recency', 'Tenure', 'Total', 'Frequency']]
+        df['Score'] = df['Recency'] - df['Tenure']/50 - df['Total']/50 - df['Frequency']/10
+        df['FName'] = df['FName'].str[0].str.upper() + df['FName'].str[1:].str.lower()
+        df['Total'] = round(df['Total']).apply(lambda x : "${:,}".format(x))
+        df = df.sort_values('Score')
+        return df
 
 if __name__ == '__main__':
     t = Transform()
@@ -118,5 +146,8 @@ if __name__ == '__main__':
     patient = t.patient_transform('../data/raw/appt.csv', '../data/raw/patient.csv')
     merged = patient.merge(total)
     model, contact = t.data_split(merged)
-    model.to_csv('../data/model/for_model_preds.csv', index=False)
-    contact.to_csv('../data/model/for_contact_list.csv', index=False)
+    df = t.contact_transform(contact)
+    print(model.sort_values('Recency'))
+    print(df.sort_values('Recency'))
+    #model.to_csv('../data/model/for_model_preds.csv', index=False)
+    #contact.to_csv('../data/model/for_contact_list.csv', index=False)

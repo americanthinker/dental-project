@@ -9,10 +9,11 @@ t = Transform()
 total = t.pay_transform('../data/raw/payment.csv', '../data/raw/claims.csv')
 patient = t.patient_transform('../data/raw/appt.csv', '../data/raw/patient.csv')
 merged = patient.merge(total)
-model, contact = t.data_split(merged)
+for_model, contact = t.data_split(merged)
+
 
 @st.cache
-def load_data(model_data, drop_columns, start_day=150, end_day=399):
+def load_data(link_data, drop_columns):
     """
     Loads data from source and parses into a test set for predictions
 
@@ -21,9 +22,8 @@ def load_data(model_data, drop_columns, start_day=150, end_day=399):
     :param: drop_columns = list of columns to be dropped from raw dataset for use with model predictions
     returns: original dataset to map back to patient contact info and test set for predictions
     """
-    
-    orig_data = model_data
-    link_data = orig_data[orig_data['Recency'].between(start_day, end_day)].reset_index(drop=True)
+
+    #link_data = orig_data[orig_data['Recency'].between(start_day, end_day)].reset_index(drop=True)
     test_data = link_data.drop(drop_columns, axis=1)
     return link_data, test_data
 
@@ -39,7 +39,7 @@ def load_model(filepath):
         Pickled_Model = pickle.load(file)
     return Pickled_Model
 
-def priority_list(original_df, predicted_probas, thresh=75):
+def priority_list(original_df, predicted_probas, thresh=0.48, num_patients=20):
     """
     Create patient prioritized contact list to prevent churn
 
@@ -48,31 +48,36 @@ def priority_list(original_df, predicted_probas, thresh=75):
     :param thresh: threshold setting for capturing predicted churn above a certain threshold, default = 70
     """
     
-    preds = pd.DataFrame(predicted_probas) * 100
+    preds = pd.DataFrame(predicted_probas)
     churns = preds[preds[1] >= thresh].loc[:,1].sort_values(ascending=False)
-    patients = original_df.loc[churns.index, :].loc[:, ['PatNum', 'FName', 'Tenure', 'Frequency', 'Recency']]
-    patients.insert(5, 'Risk Factor', round(churns,1))
-    patients.columns = ['PatNum', 'First Name', 'Tenure', '#_of_Visits', 'Last Visit (days)', 'Risk Factor']
+    priority_patients = churns.iloc[:num_patients]
+    indices = priority_patients.index.tolist()
+    patients = original_df.loc[indices, ['PatNum', 'FName', 'Tenure', 'Frequency', 'Recency']]
+    #patients.insert(5, 'Risk Factor', round(priority_patients,1))
+    patients.columns = ['PatNum', 'First Name', 'Tenure', '#_of_Visits', 'Last Visit (days)']#, 'Risk Factor']
     patients.index = patients.reset_index(drop=True).index + 1
     return patients
 
 
 dropcols = ['PatNum', 'FName',  'Recency']
 #load data from source and get create original df and data for getting predictions
-link_data, test = load_data(model_data=model, drop_columns=dropcols)
+link_data, test = load_data(link_data=for_model, drop_columns=dropcols)
 
 # load pretrained model and make predictions
 model = load_model('bestLRmodel.pkl')
-predictions = model.predict_proba(test)
+predict_probas = model.predict_proba(test)
 
 #allow use to input threshold value for prediction probabilities
-thresh = st.text_input(label='Risk Factor Threshold', value=75, max_chars=None, key=None, type='default')
-df = priority_list(link_data, predictions, thresh=float(thresh))
-st.title(f'Total # of Patients: {len(df)}')
+num_patients = st.text_input(label='# of Patients to Contact', value=10, max_chars=None, key=1, type='default')
+df = priority_list(link_data, predict_probas, num_patients=int(num_patients))
+#st.title(f'Total # of Patients: {len(df)}')
 
 #display patient data on screen
-st.dataframe(df)
+st.table(df)
 
-#st.title('Prioritized Contact List')
-
+st.title('Prioritized Contact List')
+num_patients2 = st.text_input(label='# of Patients to Contact', value=10, max_chars=None, key=2, type='default')
+contact_df = t.contact_transform(contact)
+contact_df.index = contact_df.reset_index(drop=True).index + 1
+st.table(contact_df.iloc[:int(num_patients2)])
 
