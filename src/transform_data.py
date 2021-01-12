@@ -10,8 +10,11 @@ class Transform:
         """
         Transforms raw data into grouped values of all patient payments made, both out of pocket and insurance
 
-        :param filepaths: paths to respective pay and claims tables
-        :return : merged table with Total of all patient payments over course of entire patient life
+        Parameters:
+             pay_filepath: path to payment table
+             claims_filepath: path to claims table
+        Returns:
+            Merged table with Total of all patient payments over course of entire patient life
         """
 
         # clean and transform pay table
@@ -139,15 +142,3 @@ class Transform:
         df['Total'] = round(df['Total']).apply(lambda x : "${:,}".format(x))
         df = df.sort_values('Score')
         return df
-
-if __name__ == '__main__':
-    t = Transform()
-    total = t.pay_transform('../data/raw/payment.csv', '../data/raw/claims.csv')
-    patient = t.patient_transform('../data/raw/appt.csv', '../data/raw/patient.csv')
-    merged = patient.merge(total)
-    model, contact = t.data_split(merged)
-    df = t.contact_transform(contact)
-    print(model.sort_values('Recency'))
-    print(df.sort_values('Recency'))
-    #model.to_csv('../data/model/for_model_preds.csv', index=False)
-    #contact.to_csv('../data/model/for_contact_list.csv', index=False)

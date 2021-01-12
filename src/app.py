@@ -11,16 +11,17 @@ patient = t.patient_transform('../data/raw/appt.csv', '../data/raw/patient.csv')
 merged = patient.merge(total)
 for_model, contact = t.data_split(merged)
 
-
 @st.cache
 def load_data(link_data, drop_columns):
     """
     Loads data from source and parses into a test set for predictions
 
-    :param: filepath to data file
-    :param: day_range = range of days to select churn window
-    :param: drop_columns = list of columns to be dropped from raw dataset for use with model predictions
-    returns: original dataset to map back to patient contact info and test set for predictions
+    Parameters:
+        link_data: original dataframe to link patients with after making predictions on churn
+        drop_columns: list of columns to be dropped from raw dataset for use with model predictions
+
+    Returns:
+        Original dataset to map back to patient contact info and test set to be used for making predictions
     """
 
     #link_data = orig_data[orig_data['Recency'].between(start_day, end_day)].reset_index(drop=True)
@@ -31,8 +32,11 @@ def load_model(filepath):
     """
     Loads Picked model for use with predictions
 
-    params: filepath to pickled model
-    returns: pickled model for use with predictions on data
+    Parameters:
+        Filepath to pickled model
+
+    Returns:
+        Pickled model for use with predictions on data
     """
     
     with open(filepath, 'rb') as file:
@@ -43,9 +47,14 @@ def priority_list(original_df, predicted_probas, thresh=0.48, num_patients=20):
     """
     Create patient prioritized contact list to prevent churn
 
-    :param: original df: df to map back to patient contact info
-    :param predicted_probas: predicted probabilities for each patients to be sorted highest to lowest for churn (must be 2d array for binary class)
-    :param thresh: threshold setting for capturing predicted churn above a certain threshold, default = 70
+    Parameters:
+        original df:      df to map back to patient contact info
+        predicted_probas: predicted probabilities for each patients to be sorted highest to lowest for churn (must be 2d array for binary class)
+        thresh:           threshold setting for capturing predicted churn above a certain threshold, default = 0.48
+        num_patients:     user input feature to allow setting the number of patients that the receptionist wants to contact each day
+
+    Returns:
+        Prioritized list of potential churn patients for staff to take action on (includes patient contact info)
     """
     
     preds = pd.DataFrame(predicted_probas)
