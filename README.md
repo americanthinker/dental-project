@@ -1,7 +1,7 @@
 # Dental Patient Churn Prediction    
 
 <p align="center">
-  <img align="center" src="/images/dental.png" width="600" title="Predictive Analytics">
+  <img align="center" src="/images/churn.png" width="600" title="Predictive Analytics">
 </p>  
 
 I partnered with the CEO of a Private Equity backed dental practice with the understanding that:  
