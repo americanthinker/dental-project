@@ -105,7 +105,7 @@ class Transform:
 
         return merged
 
-    def data_split(self, dataframe, churn_begin=150, churn_end=399, contact_begin=360, contact_end=720):
+    def data_split(self, dataframe, churn_begin=150, churn_end=399, contact_begin=400, contact_end=720):
         """
         Splits dataframe into two sets, one for making churn predictions and one for creating prioritized contact list
 
@@ -124,7 +124,7 @@ class Transform:
 
         return for_model, contact_list
 
-    def contact_transform(self, df):
+    def contact_transform(self, df, tenure_term=50, total_term=50, frequency_term=10):
         """
         Creates specific df for use as a prioiritzed contact list for dental staff.  Score is calculated as follows:
         Final Score = Recency (days) - Tenure/50 (days) - Total/50 ($) - Frequency/10 (visits)
@@ -132,13 +132,17 @@ class Transform:
 
         Parameters:
             df: contact_list df from previous step in chain
+            tenure_term: term to shrink tenure value, higher term gives less weight to this value, default = 50
+            total_term: term to shrink total value, higher term gives less weight to this value, default = 50
+            frequency_term: term to shrink frequency value, higher term gives less weight to this value, default = 10
 
         Returns:
             Pandas df of patients sorted in prioritzed order for recontact based on calculated score
         """
         df = df.loc[:, ['PatNum', 'FName', 'Recency', 'Tenure', 'Total', 'Frequency']]
-        df['Score'] = df['Recency'] - df['Tenure']/50 - df['Total']/50 - df['Frequency']/10
+        df['Score'] = df['Recency'] - df['Tenure']/tenure_term - df['Total']/total_term - df['Frequency']/frequency_term
         df['FName'] = df['FName'].str[0].str.upper() + df['FName'].str[1:].str.lower()
+        df.rename(columns={'FName':'First Name'}, inplace=True)
         df['Total'] = round(df['Total']).apply(lambda x : "${:,}".format(x))
         df = df.sort_values('Score')
         return df
