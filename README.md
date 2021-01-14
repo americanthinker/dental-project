@@ -35,7 +35,7 @@ industries. For this project, churn is defined as a patient who does not have an
 The breakdown in numbers below shows how costly churn can be for this specific dental practice: 
 
 <p align="center">
-  <img align="center" src="/images/churn_table.png" width="600">
+  <img align="center" src="/images/churn_biz.png" width="600">
 </p>
 
 
