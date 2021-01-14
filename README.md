@@ -19,7 +19,7 @@ I partnered with the CEO of a Private Equity backed dental practice with the und
   - List must be deployed into staff daily workflow to allow them to take action on contacting inactive patients in a prioritized fashion.  
   
 ## The Data
-I had access to the entire practices data which was housed in a mySQL database, comprising over 300 tables.  Only a handful were relevant to this particular project, 
+I had access to the entire practice's data which was housed in a mySQL database, comprising over 300 tables.  Only a handful were relevant to this particular project, 
 among which were the following tables:   
 <p align="center">
   <img align="center" src="/images/datatable.png" width="400" title="Data Table">
