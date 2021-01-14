@@ -23,8 +23,8 @@ I had access to the entire practices data which was housed in a mySQL database, 
 among which were the following tables:   
 
 <p float="left">
-  <img src="/images/mysql.png" width="300" />
-  <img src="/images/datatable.png" width="500" /> 
+  <img src="/images/mysql.png" width="150" />
+  <img src="/images/datatable.png" width="600" /> 
 </p>
 <p align="center">
   <img align="center" src="/images/datatable.png" width="600" title="Data Table">
