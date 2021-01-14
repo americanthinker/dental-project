@@ -27,4 +27,15 @@ among which were the following tables:
   <img src="/images/datatable.png" width="600" /> 
 </p>
 
+## Why it Matters: The Business of Churn 
+Patient/customer churn is one of the primary drivers of revenue loss at any business.  However, in order to take meaningful action
+to prevent or mitigate churn a business must first decide how it wants to define "churn".  The metrics used to define churn will be different across 
+industries. For this project, churn is defined as a patient who does not have an appointment in the future and has not been seen at the practice in the last 400 days.  
+
+The breakdown in numbers below shows how costly churn can be for this specific dental practice: 
+
+<p align="center">
+  <img align="center" src="/images/churn_table.png" width="600">
+</p>
+
 
