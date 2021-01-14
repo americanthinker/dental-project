@@ -22,7 +22,7 @@ I partnered with the CEO of a Private Equity backed dental practice with the und
 I had access to the entire practices data which was housed in a mySQL database, comprising over 300 tables.  Only a handful were relevant to this particular project, 
 among which were the following tables:   
 <p align="center">
-  <img align="center" src="/images/datatable.png" width="400" title="Data Table">
+  <img align="center" src="/images/datatable.png" width="600" title="Data Table">
 </p> 
 
 
