@@ -1,7 +1,7 @@
-# Churn Prediction    
+# Dental Patient Churn Prediction    
 
 <p align="center">
-  <img align="center" src="/images/dental.png" width="600" title="Predictive ANalytics">
+  <img align="center" src="/images/dental.png" width="600" title="Predictive Analytics">
 </p>  
 
 I partnered with the CEO of a Private Equity backed dental practice with the understanding that:  
@@ -16,6 +16,13 @@ I partnered with the CEO of a Private Equity backed dental practice with the und
   - Predictions are deployed within staff daily worksflow, thereby allowing them to take a proactive action to prevent churn. 
     
   2. Build a prioritized patient contact list (customer segmentation) for patients who do churn:   
-  - List must be deployed into staff daily workflow to allow them to take action on contacting inactive patients in a prioritized fashion.
+  - List must be deployed into staff daily workflow to allow them to take action on contacting inactive patients in a prioritized fashion.  
+  
+## The Data
+I had access to the entire practices data which was housed in a mySQL database, comprising over 300 tables.  Only a handful were relevant to this particular project, 
+among which were the following tables:   
+<p align="center">
+  <img align="center" src="/images/datatable.png" width="400" title="Data Table">
+</p> 
 
 
