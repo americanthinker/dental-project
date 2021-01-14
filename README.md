@@ -26,8 +26,5 @@ among which were the following tables:
   <img src="/images/mysql.png" width="150" />
   <img src="/images/datatable.png" width="600" /> 
 </p>
-<p align="center">
-  <img align="center" src="/images/datatable.png" width="600" title="Data Table">
-</p> 
 
 
