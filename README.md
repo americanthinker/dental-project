@@ -21,6 +21,12 @@ I partnered with the CEO of a Private Equity backed dental practice with the und
 ## The Data
 I had access to the entire practices data which was housed in a mySQL database, comprising over 300 tables.  Only a handful were relevant to this particular project, 
 among which were the following tables:   
+
+<p float="left">
+  <img src="/img1.png" width="100" />
+  <img src="/images/datatable.png" width="500" /> 
+  <img src="/img3.png" width="100" />
+</p>
 <p align="center">
   <img align="center" src="/images/datatable.png" width="600" title="Data Table">
 </p> 
