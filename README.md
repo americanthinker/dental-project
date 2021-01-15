@@ -2,8 +2,9 @@
 
 <p align="center">
   <img align="center" src="/images/churn.png" width="600" title="Predictive Analytics">
-</p>  
+</p>    
 
+## Overview  
 I partnered with the CEO of a Private Equity backed dental practice with the understanding that:  
   <p align='center'>
   Business  +  Data Science  =  Better Business
